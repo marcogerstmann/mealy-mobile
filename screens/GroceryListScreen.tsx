@@ -1,12 +1,23 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
+import GroceryListCheckItem from '../components/GroceryList/GroceryListCheckItem';
 
-import { Text, View } from '../components/Themed';
+import { View } from '../components/Themed';
+import { fetchGroceryList } from '../services/GroceryListService';
 
 export default function GroceryListScreen() {
+  const groceryList = fetchGroceryList();
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Einkaufsliste</Text>
+      {
+        groceryList.map(groceryListItem =>
+          <GroceryListCheckItem
+            key={groceryListItem.id}
+            text={groceryListItem.text}
+          />
+        )
+      }
     </View>
   );
 }
@@ -14,11 +25,5 @@ export default function GroceryListScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
   },
 });
