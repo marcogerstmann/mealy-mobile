@@ -21,20 +21,22 @@ export default function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
+      initialRouteName='GroceryList'
       tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
       <BottomTab.Screen
-        name="TabOne"
+        name='GroceryList'
         component={GroceryListTabNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="checkbox" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name='checkbox' color={color} />,
+          title: 'Einkaufsliste'
         }}
       />
       <BottomTab.Screen
-        name="TabTwo"
+        name='Dishes'
         component={DishesTabNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="book" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name='book' color={color} />,
+          title: 'Gerichte'
         }}
       />
     </BottomTab.Navigator>
@@ -55,7 +57,7 @@ function GroceryListTabNavigator() {
   return (
     <GroceryListTabStack.Navigator>
       <GroceryListTabStack.Screen
-        name="GroceryListScreen"
+        name='GroceryListScreen'
         component={GroceryListScreen}
         options={{ headerTitle: 'Einkaufsliste' }}
       />
@@ -69,7 +71,7 @@ function DishesTabNavigator() {
   return (
     <DishesTabStack.Navigator>
       <DishesTabStack.Screen
-        name="DishesScreen"
+        name='DishesScreen'
         component={DishesScreen}
         options={{ headerTitle: 'Gerichte' }}
       />
