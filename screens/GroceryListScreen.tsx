@@ -2,14 +2,14 @@ import * as React from 'react';
 import { StyleSheet } from 'react-native';
 import GroceryListCheckItem from '../components/GroceryList/GroceryListCheckItem';
 
-import { View } from '../components/Themed';
+import { ScrollView } from '../components/Themed';
 import { fetchGroceryList } from '../services/GroceryListService';
 
 export default function GroceryListScreen() {
   const groceryList = fetchGroceryList();
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       {
         groceryList.map(groceryListItem =>
           <GroceryListCheckItem
@@ -18,7 +18,7 @@ export default function GroceryListScreen() {
           />
         )
       }
-    </View>
+    </ScrollView>
   );
 }
 
