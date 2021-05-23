@@ -1,18 +1,18 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { observer } from 'mobx-react';
 import GroceryListCheckItem from '../../components/GroceryList/GroceryListCheckItem/GroceryListCheckItem.component';
 
-import { fetchGroceryList } from '../../services/GroceryListService';
 import { ScrollView } from '../../components/Themed';
 import styles from './GroceryListScreen.styles';
+import { useRootStore } from '../../store/provider/RootStoreProvider';
 
-export default function GroceryListScreen() {
-  const [groceryList] = useState(fetchGroceryList());
+export default observer(() => {
+  const store = useRootStore();
 
   return (
     <ScrollView style={styles.container}>
       {
-        groceryList.map(groceryListItem =>
+        store.groceryList.getGroceryList.map(groceryListItem =>
           <GroceryListCheckItem
             key={groceryListItem.id}
             text={groceryListItem.text}
@@ -21,4 +21,4 @@ export default function GroceryListScreen() {
       }
     </ScrollView>
   );
-}
+});
