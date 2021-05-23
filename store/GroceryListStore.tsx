@@ -4,16 +4,16 @@ import { RootStore } from './RootStore';
 
 export class GroceryListStore {
 
-  root: RootStore;
+  protected root: RootStore;
 
-  groceryList: GroceryListItem[] = [];
+  private groceryList: GroceryListItem[] = [];
 
   constructor(root: RootStore) {
     makeAutoObservable(this);
     this.root = root;
   }
 
-  init() {
+  init(): void {
     this.groceryList = [
       {
         id: 1,
@@ -90,11 +90,18 @@ export class GroceryListStore {
     ];
   }
 
+  get getGroceryList(): GroceryListItem[] {
+    return this.groceryList;
+  }
+
   addGroceryListItem(item: GroceryListItem): void {
     this.groceryList.push(item);
   }
-
-  get getGroceryList(): GroceryListItem[] {
-    return this.groceryList;
+  
+  setCheckState(id: number, checkState: boolean): void {
+    const item = this.groceryList.find(gli => gli.id === id);
+    if (item) {
+      item.isChecked = checkState;
+    }
   }
 }

@@ -15,7 +15,9 @@ export default observer(() => {
         store.groceryList.getGroceryList.map(groceryListItem =>
           <GroceryListCheckItem
             key={groceryListItem.id}
+            groceryListItemId={groceryListItem.id}
             text={groceryListItem.text}
+            isChecked={!!groceryListItem.isChecked}
           />
         )
       }
