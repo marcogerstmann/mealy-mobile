@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { StyleSheet } from 'react-native';
-import GroceryListCheckItem from '../components/GroceryList/GroceryListCheckItem';
+import GroceryListCheckItem from '../../components/GroceryList/GroceryListCheckItem/GroceryListCheckItem.component';
 
-import { ScrollView } from '../components/Themed';
-import { fetchGroceryList } from '../services/GroceryListService';
+import { fetchGroceryList } from '../../services/GroceryListService';
+import { ScrollView } from '../../components/Themed';
+import styles from './GroceryListScreen.styles';
 
 export default function GroceryListScreen() {
   const [groceryList] = useState(fetchGroceryList());
@@ -22,9 +22,3 @@ export default function GroceryListScreen() {
     </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
