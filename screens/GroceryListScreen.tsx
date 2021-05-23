@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 import { StyleSheet } from 'react-native';
 import GroceryListCheckItem from '../components/GroceryList/GroceryListCheckItem';
 
@@ -6,7 +7,7 @@ import { ScrollView } from '../components/Themed';
 import { fetchGroceryList } from '../services/GroceryListService';
 
 export default function GroceryListScreen() {
-  const groceryList = fetchGroceryList();
+  const [groceryList] = useState(fetchGroceryList());
 
   return (
     <ScrollView style={styles.container}>
