@@ -1,7 +1,10 @@
 {
   "common": {
-    "screenDoesNotExist": "Dieser Screen existiert nicht.",
-    "goToHomeScreen": "Gehe zum Home Screen"
+    "delete": "Löschen",
+    "notFoundScreen": {
+      "screenDoesNotExist": "Diese Seite existiert nicht.",
+      "goToHomeScreen": "Gehe zur Startseite"
+    }
   },
   "groceryList": "Einkaufsliste",
   "dishes": "Gerichte"
