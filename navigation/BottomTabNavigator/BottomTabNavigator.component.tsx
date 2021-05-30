@@ -7,6 +7,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
+import i18n from 'i18n-js';
 
 import Colors from '../../constants/Colors';
 import useColorScheme from '../../hooks/useColorScheme';
@@ -27,7 +28,7 @@ export default function BottomTabNavigator() {
         name="GroceryList"
         component={GroceryListTabNavigator}
         options={{
-          title: 'Einkaufsliste',
+          title: i18n.t('groceryList'),
           tabBarIcon: ({ color }) => <TabBarIcon name="cart" color={color} />,
         }}
       />
@@ -35,7 +36,7 @@ export default function BottomTabNavigator() {
         name="Dishes"
         component={DishesTabNavigator}
         options={{
-          title: 'Gerichte',
+          title: i18n.t('dishes'),
           tabBarIcon: ({ color }) => <TabBarIcon name="book" color={color} />,
         }}
       />
@@ -59,7 +60,7 @@ function GroceryListTabNavigator() {
       <GroceryListTabStack.Screen
         name="GroceryListScreen"
         component={GroceryListScreen}
-        options={{ headerTitle: 'Einkaufsliste' }}
+        options={{ headerTitle: i18n.t('groceryList') }}
       />
     </GroceryListTabStack.Navigator>
   );
@@ -73,7 +74,7 @@ function DishesTabNavigator() {
       <DishesTabStack.Screen
         name="DishesScreen"
         component={DishesScreen}
-        options={{ headerTitle: 'Gerichte' }}
+        options={{ headerTitle: i18n.t('dishes') }}
       />
     </DishesTabStack.Navigator>
   );

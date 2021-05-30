@@ -7,7 +7,7 @@ export const initLocale = () => {
     de: require('../lang/de')
   };
 
-  i18n.defaultLocale = 'en';
+  i18n.defaultLocale = 'de';
 
   i18n.fallbacks = true;
 
