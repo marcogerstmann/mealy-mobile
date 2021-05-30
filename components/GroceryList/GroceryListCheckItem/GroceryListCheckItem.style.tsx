@@ -1,14 +1,27 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-  section: {
+  swipeRightView: {
+    flex: 1,
+    backgroundColor: 'red',
+    justifyContent: 'center'
+  },
+  swipeRightText: {
+    textAlign: 'right',
+    color: 'white',
+    paddingHorizontal: 10,
+    fontWeight: '600'
+  },
+  listItem: {
     flexDirection: 'row',
     alignItems: 'center',
+    borderBottomWidth: 1,
+    borderBottomColor: 'lightgray'
   },
-  paragraph: {
+  listItemText: {
     fontSize: 19,
   },
-  checkbox: {
+  listItemCheckbox: {
     margin: 8,
-  },
+  }
 });
