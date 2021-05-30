@@ -5,6 +5,7 @@ import Checkbox from 'expo-checkbox';
 import { Text, View } from '../../Themed';
 import styles from './GroceryListCheckItem.style';
 import { useStore } from '../../../store/providers/RootStoreProvider';
+import { Swipeable } from 'react-native-gesture-handler';
 
 interface GroceryListCheckItemProps {
   groceryListItemId: number;
@@ -15,17 +16,34 @@ interface GroceryListCheckItemProps {
 export default observer((props: GroceryListCheckItemProps) => {
   const { groceryListStore } = useStore();
 
+  const onRenderRightActions = () => {
+    return (
+      <View style={styles.swipeRightView}>
+        <Text style={styles.swipeRightText}>
+          Löschen
+        </Text>
+      </View>
+    )
+  }
+
+  const onSwipeFromRight = (id: number) =>
+    groceryListStore.delete(id);
+
   const checkboxStateChange = (checkState: boolean) =>
     groceryListStore.setCheckState(props.groceryListItemId, checkState);
 
   return (
-    <View style={styles.section}>
-      <Checkbox
-        onValueChange={checkboxStateChange}
-        value={props.isChecked}
-        style={styles.checkbox}
-      />
-      <Text style={styles.paragraph}>{props.text}</Text>
-    </View>
+    <Swipeable
+      renderRightActions={onRenderRightActions}
+      onSwipeableRightOpen={() => onSwipeFromRight(props.groceryListItemId)}>
+      <View style={styles.section}>
+        <Checkbox
+          onValueChange={checkboxStateChange}
+          value={props.isChecked}
+          style={styles.checkbox}
+        />
+        <Text style={styles.paragraph}>{props.text}</Text>
+      </View>
+    </Swipeable>
   );
 });
