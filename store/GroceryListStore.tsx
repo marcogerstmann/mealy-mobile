@@ -91,6 +91,10 @@ const GroceryListStore = types
       if (item) {
         item.isChecked = checkState;
       }
+    },
+
+    delete(id: number) {
+      self.groceryList.splice(self.groceryList.findIndex(gli => gli.id === id), 1);
     }
 
   }));
