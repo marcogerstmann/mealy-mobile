@@ -1,0 +1,8 @@
+{
+  "common": {
+    "screenDoesNotExist": "Dieser Screen existiert nicht.",
+    "goToHomeScreen": "Gehe zum Home Screen"
+  },
+  "groceryList": "Einkaufsliste",
+  "dishes": "Gerichte"
+}
