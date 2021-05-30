@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { observer } from 'mobx-react-lite';
 import Checkbox from 'expo-checkbox';
+import i18n from 'i18n-js';
 
 import { Text, View } from '../../Themed';
 import styles from './GroceryListCheckItem.style';
@@ -20,7 +21,7 @@ export default observer((props: GroceryListCheckItemProps) => {
     return (
       <View style={styles.swipeRightView}>
         <Text style={styles.swipeRightText}>
-          Löschen
+          {i18n.t('common.delete')}
         </Text>
       </View>
     )

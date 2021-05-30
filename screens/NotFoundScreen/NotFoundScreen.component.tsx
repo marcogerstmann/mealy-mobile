@@ -11,9 +11,9 @@ export default function NotFoundScreen({
 }: StackScreenProps<RootStackParamList, 'NotFound'>) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{i18n.t('common.screenDoesNotExist')}</Text>
+      <Text style={styles.title}>{i18n.t('common.notFoundScreen.screenDoesNotExist')}</Text>
       <TouchableOpacity onPress={() => navigation.replace('Root')} style={styles.link}>
-        <Text style={styles.linkText}>{i18n.t('common.goToHomeScreen')}</Text>
+        <Text style={styles.linkText}>{i18n.t('common.notFoundScreen.goToHomeScreen')}</Text>
       </TouchableOpacity>
     </View>
   );
