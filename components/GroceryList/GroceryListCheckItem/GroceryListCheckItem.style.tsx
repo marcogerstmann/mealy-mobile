@@ -12,14 +12,16 @@ export default StyleSheet.create({
     paddingHorizontal: 10,
     fontWeight: '600'
   },
-  section: {
+  listItem: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    borderBottomWidth: 1,
+    borderBottomColor: 'lightgray'
   },
-  paragraph: {
+  listItemText: {
     fontSize: 19,
   },
-  checkbox: {
+  listItemCheckbox: {
     margin: 8,
   }
 });

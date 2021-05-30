@@ -36,13 +36,13 @@ export default observer((props: GroceryListCheckItemProps) => {
     <Swipeable
       renderRightActions={onRenderRightActions}
       onSwipeableRightOpen={() => onSwipeFromRight(props.groceryListItemId)}>
-      <View style={styles.section}>
+      <View style={styles.listItem}>
         <Checkbox
           onValueChange={checkboxStateChange}
           value={props.isChecked}
-          style={styles.checkbox}
+          style={styles.listItemCheckbox}
         />
-        <Text style={styles.paragraph}>{props.text}</Text>
+        <Text style={styles.listItemText}>{props.text}</Text>
       </View>
     </Swipeable>
   );
