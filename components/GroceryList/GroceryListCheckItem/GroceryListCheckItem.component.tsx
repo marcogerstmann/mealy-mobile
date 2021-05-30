@@ -25,7 +25,7 @@ export default observer((props: GroceryListCheckItemProps) => {
         </Text>
       </View>
     )
-  }
+  };
 
   const onSwipeFromRight = (id: number) =>
     groceryListStore.delete(id);
