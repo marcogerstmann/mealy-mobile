@@ -28,51 +28,51 @@ const mockGroceryList: any = [
   },
   {
     id: 7,
-    text: 'Scrollen'
+    text: 'Brokkoli'
   },
   {
     id: 8,
-    text: 'Scrollen'
+    text: 'Eier'
   },
   {
     id: 9,
-    text: 'Scrollen'
+    text: 'Baguette'
   },
   {
     id: 10,
-    text: 'Scrollen'
+    text: 'Wasser'
   },
   {
     id: 11,
-    text: 'Scrollen'
+    text: 'Käse'
   },
   {
     id: 12,
-    text: 'Scrollen'
+    text: 'Grüner Tee'
   },
   {
     id: 13,
-    text: 'Scrollen'
+    text: 'Fencheltee'
   },
   {
     id: 14,
-    text: 'Scrollen'
+    text: 'Tomatenzeug'
   },
   {
     id: 15,
-    text: 'Scrollen'
+    text: 'Avocado'
   },
   {
     id: 16,
-    text: 'Scrollen'
+    text: 'Butter'
   },
   {
     id: 17,
-    text: 'Scrollen'
+    text: 'Kichererbsen'
   },
   {
     id: 18,
-    text: 'Scrollen'
+    text: 'Toilettenpapier'
   }
 ];
 
