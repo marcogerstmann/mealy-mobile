@@ -1,18 +1,23 @@
 import * as React from 'react';
-import { observer } from 'mobx-react';
+import { useEffect } from 'react';
+import { observer } from 'mobx-react-lite';
 import GroceryListCheckItem from '../../components/GroceryList/GroceryListCheckItem/GroceryListCheckItem.component';
 
 import { ScrollView } from '../../components/Themed';
 import styles from './GroceryListScreen.styles';
-import { useRootStore } from '../../store/provider/RootStoreProvider';
+import { useStore } from '../../store/providers/RootStoreProvider';
 
 export default observer(() => {
-  const store = useRootStore();
+  const { groceryListStore } = useStore();
+
+  useEffect(() => {
+    groceryListStore.refreshGroceryList();
+  }, []);
 
   return (
     <ScrollView style={styles.container}>
       {
-        store.groceryList.getGroceryList.map(groceryListItem =>
+        groceryListStore.groceryList.map(groceryListItem =>
           <GroceryListCheckItem
             key={groceryListItem.id}
             groceryListItemId={groceryListItem.id}

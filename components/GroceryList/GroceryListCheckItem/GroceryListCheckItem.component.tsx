@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { observer } from 'mobx-react';
+import { observer } from 'mobx-react-lite';
 import Checkbox from 'expo-checkbox';
 
 import { Text, View } from '../../Themed';
-import { useRootStore } from '../../../store/provider/RootStoreProvider';
 import styles from './GroceryListCheckItem.style';
+import { useStore } from '../../../store/providers/RootStoreProvider';
 
 interface GroceryListCheckItemProps {
   groceryListItemId: number;
@@ -13,11 +13,10 @@ interface GroceryListCheckItemProps {
 }
 
 export default observer((props: GroceryListCheckItemProps) => {
-
-  const store = useRootStore();
+  const { groceryListStore } = useStore();
 
   const checkboxStateChange = (checkState: boolean) =>
-    store.groceryList.setCheckState(props.groceryListItemId, checkState);
+    groceryListStore.setCheckState(props.groceryListItemId, checkState);
 
   return (
     <View style={styles.section}>

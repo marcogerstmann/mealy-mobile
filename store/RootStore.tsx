@@ -1,12 +1,6 @@
-import { GroceryListStore } from './GroceryListStore';
+import { types } from 'mobx-state-tree';
+import GroceryListStore from './GroceryListStore';
 
-export class RootStore {
-  
-  groceryList: GroceryListStore;
-
-  constructor() {
-    this.groceryList = new GroceryListStore(this);
-
-    this.groceryList.init();
-  }
-}
+export const RootStore = types.model({
+  groceryListStore: GroceryListStore
+});
